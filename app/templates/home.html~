@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Welcome to the jungle</h2>
+    <h3>Home page as they go</h3>
+    <h3>Work in progress</h3>
+  </div>
+  
+  <div>
+  <p>Jinja2 to the rescue </p>
+  </div>
+{% endblock %}

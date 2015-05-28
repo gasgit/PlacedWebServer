@@ -1,0 +1,1725 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+<head>
+
+<style>
+
+body {
+<!--		margin: 100px 40px 10px 70px;-->
+	}
+	h1
+	{
+	text-align:left;
+	margin: 5px 50px 5px 50px;
+
+	}
+
+	p {
+		margin: 5px 50px 5px 50px;
+	}
+	
+	img.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+</style>
+</head>
+  <div class="jumbo">
+  <h2>Placed</h2>
+  
+ <p dir="ltr">
+    Placed
+</p>
+<p dir="ltr">
+    Software Design And Program Development Project 2015
+</p>
+<p dir="ltr">
+    Bachelor of Science in Computing &amp; Software Development
+</p>
+<p dir="ltr">
+    May 2015
+</p>
+<p dir="ltr">
+    Galway-Mayo Institute of Technology
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/_QBvZVmT0crNTEnCp1FMJnP22lroCInTqF3dfl00YhJSNpTejSkORrgRRS9TUsTDHjLTDpQK_K_IPcbjLuoQGDTibazssMqTqG84RoOj_-bzzKvSQKXINQ4aH9e-9GM7YALF7As"
+        width="384px;"
+        height="384px;"
+        alt="pinLogo.png"
+    />
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    By - Glen Gardiner G00305555
+</p>
+<p dir="ltr">
+    For - Ian McLoughlin
+</p>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1 dir="ltr">
+    Declaration
+</h1>
+<br/>
+<p dir="ltr">
+    All the work and material on this project is my own work unless stated otherwise.
+</p>
+<br/>
+<h1 dir="ltr">
+    Abstract
+</h1>
+<br/>
+<p dir="ltr">
+    The objective for this report is to document the design, development of a software application called Placed. Placed is an application where users will
+    create a collection of places and things of interest onto a server that can be viewed or created using an Android device. All users of the application can
+    access the collection of posts made while visiting an area, view comments made, when the post was created, an image, view a map, view current location,
+    view other posted locations and save favourites on to the device. Users will be able to select a geofence of the area to request a filtered list of places
+    to the device ie. 1km, 5km and 10km.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    The project will remain as prototype and in a local development environment until submission with some testing on actual devices.
+</p>
+<br/>
+<br/>
+<h1 dir="ltr">
+    <br/>
+    <br/>
+</h1>
+<h1 dir="ltr">
+</h1>
+<h1 dir="ltr">
+    Chapter 1 Introduction
+</h1>
+<br/>
+<h2 dir="ltr">
+    1.1 Contents of document
+</h2>
+<p dir="ltr">
+    To be filled later
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2 dir="ltr">
+    1.2 Goals of the project
+</h2>
+<br/>
+<p dir="ltr">
+    To create an intuitive, user friendly application for mobile devices running on the Android platform. Use device capabilities and platform APIs to enhance
+    user experience and the system. Provide a MySQL database to store, query and retrieve the data used for the application.
+</p>
+<p dir="ltr">
+    Build a web server for back end operations between application and database, display web pages used by system administrator and store some content such as
+    a folder to store images, css files and HTML layouts. Test software on devices with connection to service.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2 dir="ltr">
+    1.3 Project Management
+</h2>
+<br/>
+<p dir="ltr">
+    This project was not built off a specification and without a system analysis as such, it was difficult to predict or record the management of time
+    allocated to tasks. The agile style nature of how processes and ideas were brought together as the project evolved had uncalculated time spent on exploring
+    and learning new technologies with a lot of trial and testing.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2 dir="ltr">
+</h2>
+<h2 dir="ltr">
+    1.4 Constraints
+</h2>
+<br/>
+<p dir="ltr">
+    Connection to the network as the application will need to communicate with the web server.
+</p>
+<h2 dir="ltr">
+    1.5 Target Users
+</h2>
+<br/>
+<p dir="ltr">
+    Any mobile device user of similar applications that like to discover new locations, post images and or thoughts/recommendations, perhaps more offbeat
+    random idea for places and things to visit.
+</p>
+<h2 dir="ltr">
+    1.6 Scenario
+</h2>
+<br/>
+<p dir="ltr">
+    John Doe visits the Burren and is impressed. He takes out his phone and takes a photo.
+</p>
+<p dir="ltr">
+    He then decides that he would like if others, not just his phone contacts that might be in the area could see the view from his location. John opens Placed
+    application and creates a new entry with photo and comment about the view and posts.
+</p>
+<br/>
+<p dir="ltr">
+    Jane Blogg is another time visiting the Burren when she decides that she will check the Placed app to see if any posts have been posted for the area. From
+    the list of posts Jane gets to her phone she sees John's post and comment and decides she will check it out. Jane selects the map feature to see where
+    John's location was. She taps on the pin and gets directions from her location to the location John made the post.
+</p>
+<br/>
+<br/>
+<h2 dir="ltr">
+    1.7 Glossary of terms
+</h2>
+<br/>
+<p dir="ltr">
+    Geofence
+</p>
+<p dir="ltr">
+    Term to describe a virtual boundary around a real world location.
+</p>
+<br/>
+<p dir="ltr">
+    JSON
+</p>
+<p dir="ltr">
+    Javascript object notation - human readable syntax for storing and exchanging data.
+</p>
+<br/>
+<p dir="ltr">
+    HTTP
+</p>
+<p dir="ltr">
+    Hyper Text Transfer Protocol - application protocol for network communications defining how messages are formatted and transmitted, and what actions Web
+    servers and browsers should take in response to various commands.
+</p>
+<h2 dir="ltr">
+</h2>
+<h1 dir="ltr">
+    Chapter 2 Technologies And Languages
+</h1>
+<br/>
+<h2 dir="ltr">
+    2.1 Overview
+</h2>
+<br/>
+<p dir="ltr">
+    Open source technologies have always been cutting edge and are becoming more embraced and used to create new applications. As an avid follower and user of
+    such technologies I have built this system using all open source. The technologies used in this project are a combination some covered on the course and
+    others I have researched and learned along the way. As Android currently has market share and developed on open technologies it will be used as the client
+    for the Placed system. The system will require a RESTful system to perform HTTP communications between mobile application and web server. The web server
+    was created using the Flask micro framework to serve to the mobile application and MySQL database. Using flask allowed the development a bare bones web
+    server allowing configurations as required from a vast collection of available packages. I decided to build the flask web server using command line and
+    text editor as python packages and requirements are installed this way. Each package is installed as needed. There are some frameworks such as Django which
+    will install a collection of packages from the start, as I was new to the environment it made sense to learn step by step.
+</p>
+<br/>
+<h2 dir="ltr">
+    2.2 Languages used
+</h2>
+<br/>
+<p dir="ltr">
+    Java object orientated language on android application.
+</p>
+<ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            java is native to the android environment.
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            for the creation of classes, objects, methods and logic used throughout the mobile application.
+        </p>
+    </li>
+</ul>
+<br/>
+<br/>
+<p dir="ltr">
+    Xml for the layout on android application.
+</p>
+<ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            GUI layouts are mainly created using xml declarations which are processed at runtime.
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            good practice as it separates the presentation of the application from the code used to manipulate it.
+        </p>
+    </li>
+</ul>
+<br/>
+<p dir="ltr">
+    Python programming to create models and logic on the flask web server. Functions have been created to parse json files used to communicate between the
+    mobile application and db, base64 decoding for image files and os I/O file operations.
+</p>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    JSON to transmit data objects in arrays over network in name/ value pairs
+</p>
+<ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            JSON is language independent, text only way to store and exchange data over networks.
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            below a sample of two objects attributes in json format.
+        </p>
+    </li>
+    <li dir="ltr">
+        <p dir="ltr">
+            {
+            <br/>
+            "comments": "The fastest town in ireland",
+            <br/>
+            "id": 320,
+            <br/>
+            "lat": 53.516769,
+            <br/>
+            "lng": -8.857012,
+            <br/>
+            "photo": "1687943588.jpg",
+            <br/>
+            "place": "Tuam",
+            <br/>
+            "title": "Zoom"
+            <br/>
+            },
+            <br/>
+            {
+            <br/>
+            "comments": "The boats",
+            <br/>
+            "id": 321,
+            <br/>
+            "lat": 53.427105,
+            <br/>
+            "lng": -7.93704,
+            <br/>
+            "photo": "1687943589.jpg",
+            <br/>
+            "place": "Athlone",
+            <br/>
+            "title": "Central"
+            <br/>
+            },
+        </p>
+    </li>
+    <li dir="ltr">
+    </li>
+</ul>
+<br/>
+<p dir="ltr">
+    SQL for the database queries using sqlAlchemy on server and MySQL database.
+</p>
+<br/>
+<p dir="ltr">
+    HTML, CSS, Bootstrap and jinja2 on web server to create web pages.
+</p>
+<br/>
+<p dir="ltr">
+    CURL command line data transfer tool for testing POST/GET to web server before mobile application code was ready to test
+</p>
+<h2 dir="ltr">
+    2.3 Tools Used
+</h2>
+<br/>
+<p dir="ltr">
+    Operating system - Ubuntu 14.04.2 LTS
+</p>
+<p dir="ltr">
+    Mobile IDE - Android Studio 1.1.0 with upgrade to 1.2.1.1
+</p>
+<p dir="ltr">
+    Web Server - Flask 0.10.1
+</p>
+<p dir="ltr">
+    MySQL - 5.5.43
+</p>
+<p dir="ltr">
+    Gedit - text editor used to create files
+</p>
+<p dir="ltr">
+    Terminator - open multiple terminals in single window
+</p>
+<p dir="ltr">
+    phpMyAdmin
+</p>
+<h2 dir="ltr">
+    2.4 System Architecture and Design
+</h2>
+<br/>
+<p dir="ltr">
+    I have decided to create the application with a MVC framework. Separating UI (View) from Database(Model) and Web Server(Controller). The mobile
+    applications requires user interaction(view) to retrieve/send data to the model(database) . This database is accessed by all users and needs to be stored
+    on a server. All communication and data manipulation needs to go through a web service(controller)
+</p>
+<h3 dir="ltr">
+    2.4.1 Model View Controller
+</h3>
+<br/>
+<p dir="ltr">
+    Model is the database where the data is stored with the rules and constraints.The model will return the same set of data for a controller request whether
+    the request comes from the mobile app or a webpage on the server. The model will place the data into a data structure the controller can use to return the
+    data to the view. In this system the controller will jsonify
+</p>
+<br/>
+<p dir="ltr">
+    View is the presentation lay of the application, designed as to how the data is presented to the user on the device. On mobile application in this system
+    it will be an activity with a view and on the web server it will be a HTML page.
+</p>
+<br/>
+<p dir="ltr">
+    Controller manages the requests from the user interface and manipulates the data from the model and returns requests back to the view.
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh6.googleusercontent.com/eIykxveiS2BG4AFb1Rz65W1iCmYL2lXOk3q5sIRwp_JKXuk8n_RLFOUYN4hp9UWkxrCyeAI-kPn3YRUj91zypXVw7siPTH86qadnPxdwDEtQzYYLNTSD1SR3D_h1Dt1Fkne-SCg"
+        width="624px;"
+        height="373px;"
+        alt="MVC.png"
+    />
+</p>
+<h3 dir="ltr">
+    2.4.2 HTTP
+</h3>
+<br/>
+<p dir="ltr">
+    HTTP is the most commonly used protocol for communicating and transferring data effectively across TCP/IP network connections. The mobile application in
+    this system is the HTTP “client”. The web server is the HTTP “server”. Requests to the flask server are made using HTTP posts and passing objects in JSON
+    format which are parsed on both the client and server. The server will process the data and if requested will return a response to the client. Example from
+    this system is when a “get data” request is sent to the server, the server will query database and receive a result set. The server will take the resultset
+    and return it back as a JSON string to the client. Request response messaging
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh6.googleusercontent.com/HiG0DNMkVQdJn7iQPQBbF8gw9tSju0n_f0M_kVdFJMjqWA4G54mM0YsIL4rLKTX0uRwwPkMX9dAsh1u6nsvoyaKMx3Q1_lu92vPXBN77jvRQJtCKRWdbO5v3VdaJgkV7XlWU4Bs"
+        width="587px;"
+        height="225px;"
+        alt="ClientServer.png"
+    />
+</p>
+<p dir="ltr">
+    Each route is mapped to a controller, when the controller has a request from a route if successful the controller action will take place.
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    <img
+        src="https://lh5.googleusercontent.com/ZMmu9TIwGpII0Ihh5a-3T_E-X_g4e9ZWwcRJ40g4UlcW73_1IrMPT7QRq4T5wftzAKv0Odg4VrhK8Hb2qOyztV4U7-MhrNvjckSlKHWGimqpzEBv-IHTjVuaJeYuUvzIsFiYT30"
+        width="523px;"
+        height="296px;"
+        alt="RoutesDia.png"
+    />
+</p>
+<br/>
+<h2 dir="ltr">
+    2.5 Client Side
+</h2>
+<br/>
+<h3 dir="ltr">
+    2.5.1 Overview
+</h3>
+<br/>
+<p dir="ltr">
+    Front end operations to the application are on the Android platform. All of the user interactions are completed using different activities. Each activity
+    gives the user a graphical interface to, navigate, input or display content. Input from the user interface is placed into objects that are used to create
+    JSON files. Once the JSON file is created then a post using HTTP to the web server for server side operations. When the user make a request to the server
+    to retrieve content the process is reversed. The server returns a JSON file to the application. Using a class called HTTPManager the JSON file is read in
+    using BufferReader and InputStreamReader to a reader object. Then reading line by line and using string builder to create a file of JSON content. This file
+    is then passed to the PlacesJSONParser class where it is parsed to a JSONObject. JSONArray is the created using the object and the “places” tag.
+</p>
+<p dir="ltr">
+    A new List of places called placeList is created and a plain old java object called place. Iterating over the JSONArray a JSONObject is created.Each place
+    object sets its attributes from the name/value pair from the of the JSONObject. Each place object is then added to the
+</p>
+<p dir="ltr">
+    placeList. The objects in the placeList can now be used for user interface display.
+</p>
+<br/>
+<h3 dir="ltr">
+    2.5.2 Java Class
+</h3>
+<br/>
+<p dir="ltr">
+    This is the class I have used to create objects of Places used throughout the mobile application with getter and setters to load attributes from user
+    interface to objects for manipulation and processing.
+</p>
+<br/>
+<p dir="ltr">
+    public class Places {
+</p>
+<br/>
+<p dir="ltr">
+    private String id;
+</p>
+<p dir="ltr">
+    private String title;
+</p>
+<p dir="ltr">
+    private String place;
+</p>
+<p dir="ltr">
+    private String comments;
+</p>
+<p dir="ltr">
+    private String lat;
+</p>
+<p dir="ltr">
+    private String lng;
+</p>
+<p dir="ltr">
+    private String photo;
+</p>
+<p dir="ltr">
+    private String posted;
+</p>
+<p dir="ltr">
+    private String image;
+</p>
+<p dir="ltr">
+    private Bitmap bitmap;
+</p>
+<br/>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<h3 dir="ltr">
+    2.5.3 Activities
+</h3>
+<p dir="ltr">
+    Android application will consist of several activities to display, create, save and delete content.
+</p>
+<p dir="ltr">
+    Each activity is a single user interface class.
+</p>
+<p dir="ltr">
+    Quick overview of what is in each activity in Placed app is performing
+</p>
+<p dir="ltr">
+    About
+</p>
+<p dir="ltr">
+    About activity has short notes on the application and some of the features a user might use.
+</p>
+<br/>
+<p dir="ltr">
+    Create Place
+</p>
+<br/>
+<p dir="ltr">
+    Create place activity is where the user will input details to create a new post using the edittext fields for Title, Place and Comments. The image button
+    will open the media library to select an image to add to the entry. Latitude and longitude from location manager complete the details to create the post.
+    All the attributes are stored in the newPlace and imgPlaces objects.
+</p>
+<p dir="ltr">
+    The newPlaces object is used to create a newPlacesJObj with name value pairs for a HTTP post to the server and to the database.
+</p>
+<br/>
+<p dir="ltr">
+    The attribute for the photo uses its hashCode appended with “.jpg” created from the selectedImageUri from the device system media library. This new id is
+    stored in the database and will also name the image on the server in the static/img folder.
+</p>
+<br/>
+<p dir="ltr">
+    Images are encoded to base64 for faster network transfer. While creating a place entry an image is selected from the device gallery. The image is selected
+    and decoded to bitmap. Image resized to thumbnail 200 and compressed to byteArray. ByteArray is then encoded to base64 string. This string is then added to
+    a JSON object with the new id and and posted to the server. The postImage function on the server will decode the base64 and write the image to the folder
+    and rename it with the new id.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    Display Activity
+</p>
+<br/>
+<p dir="ltr">
+    Display activity is created after the user selects the get data button from the main page.
+</p>
+<p dir="ltr">
+    If there is no connection to the server for any reason there will display a toast message informing the user and returns to the main page. If the
+    connection is good then a request is made to the server and depending on the geofence selected the server will respond with the first 30 entries for the
+    area from the database to a listView. The listview will display the Title, Place, Posted and a thumbnail image for each result.
+</p>
+<p dir="ltr">
+    Running in an async background task HTTP manager returns a JSON string which in turn
+</p>
+<p dir="ltr">
+    get passed to PlacesJsonParser to create displayPlacesList. As this new list will only have the URL for the image I have to iterate over displayPlacesList
+    and for each place use the image url and request the image from the server, decode to bitmap and add to the place object.
+</p>
+<br/>
+<p dir="ltr">
+    This is a select statement based on the Haversine formula that I have passed the lat and lng of the current location as well as the selected geofence
+    variables to the statement.
+</p>
+<br/>
+<p dir="ltr">
+    String str = " SELECT *, ( 6371 * acos( cos( radians(" + String.valueOf(lat) + ") ) * cos( radians( lat ) ) "
+</p>
+<p dir="ltr">
+    + "* cos( radians( lng ) - radians(" + String.valueOf(lng) + ") ) + sin( radians(" + String.valueOf(lat)
+</p>
+<p dir="ltr">
+    + " ) ) * sin( radians( lat ) ) ) ) AS distance FROM places "
+</p>
+<p dir="ltr">
+    + "HAVING distance &lt; " + String.valueOf(PlacedGlobal.geoFence)
+</p>
+<p dir="ltr">
+    + " ORDER BY distance LIMIT 30 ";
+</p>
+<br/>
+<p dir="ltr">
+    https://developers.google.com/maps/articles/phpsqlsearch_v3
+</p>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    This statement will return the nearest 30 places within a radius of the geofence variable
+</p>
+<p dir="ltr">
+    to the lat, lng It calculates the distance based on the latitude/longitude of that row and the target latitude/longitude, and then asks for only rows where
+    the distance value is less than String.valueOf(PlacedGlobal.geoFence) , orders the whole query by distance, and limits it to 20 results. To search by
+    kilometers instead of miles, replace 3959 with 6371.
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Display Single
+</p>
+<br/>
+<p dir="ltr">
+    Display single activity is where all the attributes from a single place object are displayed to the user. Activity begins when a user selects from the
+    listview in Display activity. Labels, textviews and an imageView are used to display attributes from the object.
+</p>
+<br/>
+<p dir="ltr">
+    Button to go to map will take the coordinates from the single object displayed and locate where the post was made. The map will have a map pin at the
+    coordinates.The menu will show favourites and then save to favourites and delete from device. The save to favourites will call an instance of the DbHandler
+    class and addPlace method to add the entry to the table_places on the Sqlite database that is on the device.Button report content can be used to report any
+    content to the web server and it will be saved to the reports table in the database. This content can be monitored by the Administrator of the website.
+</p>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    Favorites
+</p>
+<br/>
+<p dir="ltr">
+    Favourites activity shows the favourites saved to the device in a listView adapter.Each entry to the list has title, place and posted attributes shown.
+    There is a singleFavPlace object declared to store the content for a single selection. Selecting from the list will begin the FavouritesSingle activity
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Favourites Adapter
+</p>
+<br/>
+<p dir="ltr">
+    Favourites adapter contains a view to display the selected from listView on favourites.
+</p>
+<p dir="ltr">
+    Each entry has an inner view with title, place and posted attributes shown
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Favourites Single
+</p>
+<p dir="ltr">
+    Favourites single activity is where all the attributes from a single favourite place object are displayed to the user. Activity begins when a user selects
+    from the listview in Favourites activity. Labels, textviews and an imageView are used to display attributes from the object.
+</p>
+<p dir="ltr">
+    Button to go to map will take the coordinates from the single object displayed and locate where the post was made. The map will have a map pin at the
+    coordinates.
+</p>
+<p dir="ltr">
+    The menu will show favourites and delete from device. Button delete from favourites.
+</p>
+<p dir="ltr">
+    The delete from favourites will call an instance of the DbHandler class and deletePlace method to delete the entry from the table_places on the Sqlite
+    database based on the id
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    HttpManager
+</p>
+<br/>
+<p dir="ltr">
+    HTTP manager opens a HttpURLConnection to the server when the getData method is called and uses the Bufferreader and InputStreamReader to read in the
+    content from the connection.
+</p>
+<p dir="ltr">
+    The reader reads in each line and then appends them using string builder to create a JSON string.The JSON string can then be passed to the
+    PlacedJSONParser.
+</p>
+<br/>
+<p dir="ltr">
+    Main Activity
+</p>
+<br/>
+<p dir="ltr">
+    Main activity is the first thing a user will see when the application starts.In the onCreate i have a method called addListenerOnButton which has all the
+    buttons together to keep the main empty. Button get data starts the Display activity. Button Create Place begins the create place activity. Button about
+    begins the about activity. Button Favourites will execute an async background task of checking the database using an instance if the DbHelper class.
+</p>
+<p dir="ltr">
+    The menu is driven by a switch statement with value for the Placed.Global.geofence variable for the user to set before calling the get data activity.
+</p>
+<br/>
+<p dir="ltr">
+    Maps Activity
+</p>
+<p dir="ltr">
+    Maps activity creates a map object where the lat, lng from a place entry from either DisplaySingleActivity or FavouriteSingle activities have the map
+    button where the coordinates of that particular place object is passed to place the NEW_PIN and show where the post was created. If the user taps on the
+    pin a label will display the place attribute from the object. It also adds the full features of the Google map API, allowing for directions, current
+    location and street view.
+</p>
+<br/>
+<p dir="ltr">
+    Placed Global
+</p>
+<p dir="ltr">
+    Placed Global is a class that I have to store variables and data structures that the application needs to access from different activities. The geofence
+    variable set in Main Activity from the menu and used in the select statement of the Display Activity. Arraylist called favList is used in more than one
+    Activity.
+</p>
+<br/>
+<p dir="ltr">
+    Places
+</p>
+<br/>
+<p dir="ltr">
+    Places java class with getters and setters.The attributes were identified early on in the development of the system as the minimum basic to start
+    development on an application like this.I would have more attributes and classes if restarting this project now that it's off the ground.
+</p>
+<br/>
+<p dir="ltr">
+    Places Adapter
+</p>
+<br/>
+<p dir="ltr">
+    Places adapter contains a view to display the selected from listView on places.
+</p>
+<p dir="ltr">
+    Each entry has an inner view with title, place and posted and thumbnail
+</p>
+<br/>
+<p dir="ltr">
+    Places DbHandler
+</p>
+<br/>
+<p dir="ltr">
+    Places DbHandler is a class created for system wide database operations for the Sqlite database implementing the sqliteOpenHelper. The placesDB.db is
+    created here.The places table is created with the layout modeled to the Places java class as it will be used for operations. The main methods are addPlace,
+    getFavourites and deletePlace.
+</p>
+<p dir="ltr">
+    The addPlace insert method takes an object from Display Single Activity as an argument, gets and puts the attributes into a ContentValue object open
+    connection and writes the contents to the table and closes the connection. The getFavourites method selects all from the table, as the cursor moves through
+    the rs the attributes are set to a new favPlace object that is then added to the Placed.Global.favList in the PlacedGlobal class for access from other
+    activities.
+</p>
+<p dir="ltr">
+    The deletePlace method is takes a String argument for the id of a table entry. If id id found then delete row. The deletePlace method is called by creating
+    an instance of the DbHandler and calling the delete place method getting the id attribute from the singlePlaceFav object currently displayed.
+</p>
+<br/>
+<p dir="ltr">
+    Places JSONParser
+</p>
+<br/>
+<p dir="ltr">
+    The JSONParser takes String as an argument and can easily parse a JSON string to a JSONObject. From this object a JSONArray is created using the “places”
+    tag/node.
+</p>
+<p dir="ltr">
+    Iterating over the JSONArray each element can be inserted to a new JSONObject . Each attribute from the JSONObject can be extracted and set to a place
+    object. Each place object
+</p>
+<p dir="ltr">
+    in turn a added to a list called placesList.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2 dir="ltr">
+    2.6 Server Side
+</h2>
+<h3 dir="ltr">
+    2.6.1 Overview
+</h3>
+<br/>
+<p dir="ltr">
+    Back end operations for the system are carried out on PlacedWebServer which is built on the Flask micro framework. I have created models for three tables
+    Place, Report and User.The models are used to pass data between the web server and the database. The library used is SqlAlchemy. HTML pages layout pages
+    and templates are created using jinja2 template engine. The web server for the development of the system is running on 127.0.0.1:5000.
+</p>
+<p dir="ltr">
+    Routes are used to bind functions to URLs
+</p>
+<br/>
+<p dir="ltr">
+    # home page
+</p>
+<p dir="ltr">
+    @app.route('/home/')
+</p>
+<p dir="ltr">
+    def home():
+</p>
+<p dir="ltr">
+    return render_template('home.html')
+</p>
+<br/>
+<h3 dir="ltr">
+    2.6.2 Models
+</h3>
+<br/>
+<p dir="ltr">
+    Models are Python classes corresponding with the tables in the system database with a query attributes. The models are created with fields as close to the
+    Places java class on the client. The package imported is SQLAlchemy to help with db operations.
+</p>
+<br/>
+<p dir="ltr">
+    # Place class model for database
+</p>
+<p dir="ltr">
+    class Place(db.Model):
+</p>
+<p dir="ltr">
+    __tablename__ = 'places'
+</p>
+<p dir="ltr">
+    id = db.Column(db.Integer, primary_key=True)
+</p>
+<p dir="ltr">
+    title = db.Column(db.String(100))
+</p>
+<p dir="ltr">
+    place = db.Column(db.String(100))
+</p>
+<p dir="ltr">
+    comments = db.Column(db.Text)
+</p>
+<p dir="ltr">
+    lat = db.Column(db.Float(6))
+</p>
+<p dir="ltr">
+    lng = db.Column(db.Float(6))
+</p>
+<p dir="ltr">
+    photo = db.Column(db.String(100))
+</p>
+<p dir="ltr">
+    posted = db.Column(db.DATETIME)
+</p>
+<br/>
+<p dir="ltr">
+    # Report class model for database
+</p>
+<p dir="ltr">
+    class Report(db.Model):
+</p>
+<p dir="ltr">
+    __tablename__ = 'reports'
+</p>
+<p dir="ltr">
+    rid = db.Column(db.Integer, primary_key=True)
+</p>
+<p dir="ltr">
+    id = db.Column(db.Integer)
+</p>
+<p dir="ltr">
+    posted = db.Column(db.DATETIME)
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    # User class model for database
+</p>
+<p dir="ltr">
+    class User(db.Model):
+</p>
+<p dir="ltr">
+    __tablename__ = 'users'
+</p>
+<p dir="ltr">
+    id = db.Column(db.Integer, primary_key=True)
+</p>
+<p dir="ltr">
+    name = db.Column(db.String(20))
+</p>
+<p dir="ltr">
+    password = db.Column(db.String(10))
+</p>
+<p dir="ltr">
+    created = db.Column(db.DateTime)
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Quick overview of what is in each route on PlacedWebServer is performing
+</p>
+<h3 dir="ltr">
+    2.6.3 Routes
+</h3>
+<p dir="ltr">
+    @app.route('/home/')
+</p>
+<p dir="ltr">
+    Renders the template for the home page extending the layout.html when url is visited.
+</p>
+<p dir="ltr">
+    Layout.html has navigation bar, title and css consistent to all pages.
+</p>
+<br/>
+<p dir="ltr">
+    @app.route('/about/')
+</p>
+<p dir="ltr">
+    Renders the about page for web app.
+</p>
+<p dir="ltr">
+    Documentation here
+</p>
+<br/>
+<p dir="ltr">
+    @app.route('/places/')
+</p>
+<p dir="ltr">
+    A query through the Place model returns all entries in the places table to var results.
+</p>
+<p dir="ltr">
+    The places.html template is rendered with a table. The results var is passed to the page where it is iterated over and each attribute is displayed in a
+    table row.
+</p>
+<br/>
+<p dir="ltr">
+    @app.route('/postImage/', methods=['GET', 'POST'])
+</p>
+<p dir="ltr">
+    The function will check if it is a GET or POST request. Check for the content header and in this case the Content/Type is application/json. Using the
+    name/value mapping of JSON the request maps the data to local variable. The photo variable gets the photoPost value, the image variable gets the value of
+    imgPost after it has been decoded from base64.
+</p>
+<p dir="ltr">
+    The image and name are written to the static/img folder on the web server with os file operations.
+</p>
+<br/>
+<p dir="ltr">
+    @app.route('/postLatLng/', methods=['POST','GET'])
+</p>
+<p dir="ltr">
+    The postLatLng function after checking has a post from the client, the Content/type is json.Using the name/value mapping the Global var_query variable gets
+    the str value, which is the get data request from the client. The var_query is passed to the getPlaces() .
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    SELECT *, ( 6371 * acos( cos( radians(" + String.valueOf(lat) + ") ) * cos( radians( lat ) ) "
+</p>
+<p dir="ltr">
+    + "* cos( radians( lng ) - radians(" + String.valueOf(lng) + ") ) + sin( radians(" + String.valueOf(lat)
+</p>
+<p dir="ltr">
+    + " ) ) * sin( radians( lat ) ) ) ) AS distance FROM places "
+</p>
+<p dir="ltr">
+    + "HAVING distance &lt; " + String.valueOf(PlacedGlobal.geoFence)
+</p>
+<p dir="ltr">
+    + " ORDER BY distance LIMIT 30 ;
+</p>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    @app.route('/getPlaces/', methods=['GET'])
+</p>
+<p dir="ltr">
+    The client has posted a get request with the getData() on mobile device.The getPlaces function receives the request. The sql query with device location,
+    geofence and limit have been posted and delivered in var_query variable from postLatLng() is used to query the database from statement.
+</p>
+<br/>
+<p dir="ltr">
+    results = Place.query.from_statement(var_query).all()
+</p>
+<br/>
+<p dir="ltr">
+    The json_results [ ] is declared. The results collection is iterated over and dictionaries with name/value pairs are created and appended to the
+    json_results [ ]. Returning jsonify(Places= json_results) will return a JSON file of the result set.
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    @app.route('/getPlacesWeb/', methods=['GET'])
+</p>
+<p dir="ltr">
+    The getPlacesWeb function print directly to the browser in JSON directly from the query to the database. I have used this function for testing from the
+    beginning of the server development and left it here.
+</p>
+<p dir="ltr">
+    Single sample of an object on JSON string.
+</p>
+<br/>
+<p dir="ltr">
+    {
+    <br/>
+    "places": [
+    <br/>
+</p>
+<p dir="ltr">
+    {
+    <br/>
+    "comments": "Coral lake here boy!!",
+    <br/>
+    "id": 316,
+    <br/>
+    "lat": 53.196999,
+    <br/>
+    "lng": -8.567,
+    <br/>
+    "photo": "1687943465.jpg",
+    <br/>
+    "place": "Loughrea",
+    <br/>
+    "title": "The Lake"
+    <br/>
+    }
+    <br/>
+    ]
+    <br/>
+    }
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    @app.route('/postPlaces/', methods=['GET', 'POST'])
+</p>
+<p dir="ltr">
+    The client has sent a new post to the server with content to the server.The postPlaces function checks for content/type and if method is post. Using the
+    name/value pairs local variables title, place, comments, lat, lng and photo get values from request. Check is made to ensure each variable has a value and
+    if not returns an error message. If all variables are ok returning a pointer to the json and the Place model database session can commit.
+</p>
+<br/>
+<p dir="ltr">
+    @app.route('/postReport/', methods=['GET', 'POST'])
+</p>
+<p dir="ltr">
+    The client makes a post to report content to the server for the administrator.
+</p>
+<p dir="ltr">
+    The postReport checks method is post, content /type is json, using name/ pair to get value for id, check if id is exists, commit to the reports table
+</p>
+<p dir="ltr">
+    @app.route('/', methods=['POST', 'GET'])
+</p>
+<p dir="ltr">
+    def login()
+</p>
+<ul>
+    <li dir="ltr">
+        <p dir="ltr">
+            The default page for web server @127.0.0.1:5000. Function login renders the login.html page with template and layout.html.The login page has login
+            and password fields and login button. The login function will query the users table and create a collection of username and passwords. request.form
+            will get the string content of each and store in POST_USERNAME and POST_PASSWORD variables. Iterating over the reults collection and if
+            POST_USERNAME != result.name or POST_PASSWORD != result.password: unsuccessful display “invalid credentials” message and stay at login. If the
+            username and password match render the home page.
+        </p>
+    </li>
+</ul>
+<br/>
+<p dir="ltr">
+    @app.route('/reported/')
+</p>
+<p dir="ltr">
+    The administrator checks if any content is reported
+</p>
+<p dir="ltr">
+    The reported function renders the reports page. Results = Reports.query.all(). the results are returned with the reports.html page where they are iterated
+    over and placed into relevant fields in a table
+</p>
+<br/>
+<br/>
+<h2 dir="ltr">
+    2.7 MySQL server
+</h2>
+<h3 dir="ltr">
+    2.7.1 Overview
+</h3>
+<p dir="ltr">
+    During the development of the system a MySQL server stores my database “ gapp.sql” .
+</p>
+<p dir="ltr">
+    with three tables, “places”, “reports” and “login”.
+</p>
+<h3 dir="ltr">
+    2.7.2 Tables
+</h3>
+<br/>
+<p dir="ltr">
+    Places table is used to store all the information for each place entry except the bitmap image, it will have the image name stored in the photo column. The
+    bitmap is encoded posted to the server, decoded and written to the img folder.
+</p>
+<br/>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/MSYZLhwHHkuhowZU5ELqzasM4FAuMx12VhA7wEn9_VEiLAOoNBUIHkkGGdByxSD4fZuy6OH-LHtgQKPtKu2amnwQ9UM19dLJxFJnswL5mbQwZ2Xui2iQsN2Sv30KQeZRYJglqQk"
+        width="624px;"
+        height="336px;"
+        alt="PlacesTable.png"
+    />
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Reports table stores information from when users report content. The id, comments and image from the offending table are saved which can be viewed by admin
+    on the web server.
+</p>
+<br/>
+<p dir="ltr">
+    <img
+        src="https://lh6.googleusercontent.com/YjMNtjwTXQPdH1lTzQ-69O3YTaCe7TvhUxsiXlTD9V-d43J5N9_wZaPs7ADeSAhlGiqXg53yPyWq29SpCjLMPAV-VBj4pkDqDBB4On_iEmXwUKVNdU5vKPkebM0qUcsqWqFVoCA"
+        width="604px;"
+        height="93px;"
+        alt="reportsTable.png"
+    />
+</p>
+<br/>
+<br/>
+<p dir="ltr">
+    Users
+</p>
+<p dir="ltr">
+    Table to store the username and password for the webserver
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh6.googleusercontent.com/PxQ5yNSTWt2ZaQrZrAE7RdiIV0vUP3J62XDrn8VriHJlMJEK2kZjD-M7uTCH6RGjyE_XTeVzNZI5XVa0GtdF_VnKN04N7JIGB21HkUr3qtBaglIQQBQNHLHjhkikFg9ggAJ6CYo"
+        width="265px;"
+        height="29px;"
+        alt="users.png"
+    />
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p dir="ltr">
+    Attribution: Font Awesome by Dave Gandy - <a href="http://fortawesome.github.com/Font-Awesome">http://fortawesome.github.com/Font-Awesome</a>
+</p>
+<br/>
+<h1 dir="ltr">
+    Chapter 3 Future Development
+</h1>
+<br/>
+<p dir="ltr">
+    User accounts with social messaging where users of the application can communicate with each other via messaging service, and/or current location to each
+    other. Proximity alerts to posts from the list received in current area.
+</p>
+<br/>
+<h2 dir="ltr">
+    3.1 Conclusions and recommendations
+</h2>
+<br/>
+<p dir="ltr">
+    The project was a good challenge with for me using new technology and protocols. I have gained a lot of experience coding with network protocols and
+    transfer methods.The building of the web server using python programming was very interesting and quite a steep learning curve in a short time. I will
+    continue gaining experience with this type of development in the future.
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h2 dir="ltr">
+    3.2 Mobile Screenshots
+</h2>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Menu
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Menu Extended
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/eGs_05fnXmhxizVcob4CcGg4Q0WmN_I3riEiNpdD8hgjeDBC4w8P5Sw_JQG1rxFdOziaon78Cbbw9UxnxSuvp8sBhJUToHrgoie2eHUmGPcC_DElk4z0raVY8mjvjarzJno9bng"
+                            width="297px;"
+                            height="537px;"
+                            alt="GeoFence.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh6.googleusercontent.com/Lpm3zFkf1_O4KkufKcqPbk-lP6ZTEDYBUwLQq3NrnR7n97ip2UfKugfSil0F4H2kyb7cKrqszf8iuGwV9INmEWYDTMPoXqHGswVblkm_z72iKHOIvp6Dgv6hgtbdaLbwrhRpAcg"
+                            width="297px;"
+                            height="537px;"
+                            alt="Geo2.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Menu has geofence
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Select fence limit for Places returned
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        MainActivity
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        DisplayActivity
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/LtD6XuOOXtWKm5k_WJoJIQBCssD7b6eLtJaDKuePwy_kDY-WTRLXcjdhqiSlyNUV-WcUloZeli23Ue6fHtnrPxduXn4AfLvRJY1ZPK7rTcij6U8NYOHJ-2yzHKozOMolsdUywJw"
+                            width="297px;"
+                            height="537px;"
+                            alt="MianScreen.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/5kvMrNl0Cgl2MclsucxiQ2gp6aPtgkUIvqfubDQqce7Xh_9dYYn3vaOhXIt7hrrrB82K3yAX2NfKqoB6fFLn7pDIptc2v2gZwwZHDs4eCWxde2UubthrDsLKoTRcOVHCTfjbSAA"
+                            width="297px;"
+                            height="535px;"
+                            alt="GetData.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Choose get data to get back a list of posts from the server
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Posts are loaded into a scrollable listview and can be selected
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Display Single
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Saved To Favourites Toast
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/qY4FkfI9Yox_GNQwaZq8AlMwf1gvFca0OCXLx-3fR8BDTVMGOULZUkfj1ENqP-_53isUcz8r7F8pvHrK9g3tAcalhxAfsYvGDUdVShnorV6TkIepDPHJTGjKQNW1EBzu7E-aKIU"
+                            width="297px;"
+                            height="537px;"
+                            alt="displaySingle.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/DSklkUei-EabrEhViZuj2Eqa6D36PJ_V7fvRtNnuQi841LBTM8lelGLKnkuDV9YQh-h4heaeDQjPLL4oDeg0PzS8ApbwB_yTbwptsisH7aVEbXDs1WGPpNIXjXOtLv4VsOw2Nmg"
+                            width="297px;"
+                            height="537px;"
+                            alt="SavedFavourites.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Choose map
+                    </p>
+                </td>
+                <td>
+                    <br/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Map Toast
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Map Label
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh6.googleusercontent.com/YFNxl9L9DwGd2pCqDmuv5yAbR_UVsyvNxaX_47B1RAoXoq9IwkmvUqGVD6qDF55VnDM0X_0BRWbx4vMU_z3EoxOUKYD3I1V7RxUBfBIKcl7q0yzxStq5lt8kMPLW5EXRczeFy2Q"
+                            width="297px;"
+                            height="537px;"
+                            alt="Map1.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh5.googleusercontent.com/I81QW9C8FWMY2ObCi-FkNC4pp_0jraMnsQte-wfAMKJ5CwjQBh6rYOiZehJXvKTrzah6RbTXM6a_YGXlM5GPrAAsL2obeC7VCP-RwiHXjYct5y9AhaHK7OCBcC7KFjrccoKQm5o"
+                            width="297px;"
+                            height="537px;"
+                            alt="map2.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Shows pin from list
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Tap pin to get location and directions
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Map Directions
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Selected from favourites
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/hhr9JpaRsb4GD5MpeeiC155JWUYpMjDV5b370mPbCTKszIFX9ikUk0yiroSMAiJQSwibIfg9uTrJUNE8yUhvHKiO7czzEf2b5e9QNxkb3k_9s-lrblfeNb89L-SKuSWzBeQLxIA"
+                            width="297px;"
+                            height="537px;"
+                            alt="map3.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh6.googleusercontent.com/sQ_JExFkvWZxsUOmw0JYKe6ka30ByQjpLpYsIApb4dBG8Zm4dAb8_uVQ5NXFBgEcInVScy_WIyndCbkJRLchl0TxMXx0JnIWNlJY6G0XYouUPia2oMRMe3-0S-438M70bi6-Rls"
+                            width="297px;"
+                            height="537px;"
+                            alt="favouriteSingle.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Direction from current location to pin
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Favourites saved to the device
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        CreatePlace
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Choose Image
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/85gTl0CqKhdEgY8wUa5BI4nGoJlsUleJn_d-nzweu7JNu8PHrpZ0drxNhJdO1667ls7TkiymwJg10lJceJmAGJI_nRTQSc2jF1mFxe35HcVe0DF1zw75kF1gwKFhI2KYT91oUJ8"
+                            width="297px;"
+                            height="537px;"
+                            alt="crete2.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/i_KQsSzRaAXhAe1dHQ0R3Eu_facr_v0eEEfjzTkLuZNBINducpEXGfnfgOS6UmfVG9ZKctscw3Wc-ZQLOVFISmIK-eS5gJaNPzork4w3h88LI_wKlX1IGiSW69Eoug54LngtYhA"
+                            width="297px;"
+                            height="537px;"
+                            alt="ChooseImage1.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Create place is when the user is making a new post. Choose image to select from the device
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Selecting an image from the gallery
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Image Selected
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Save Menu
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh5.googleusercontent.com/9wbYuZ_YKPWhJubUyoPX3BB_THB3c71MoORuIdFg-ooCo11lbWvCi50uIHyKztrlCobFa3XT1KLgPlpqQHOk8VF_hlhFnYPiEARhoOLVKGIRgOSRWfKrLpLajXdbrfBu1YjdjLQ"
+                            width="297px;"
+                            height="537px;"
+                            alt="selectImage2.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh6.googleusercontent.com/-ZCk5Vt4eKPjguPuLNJnz6KJGpvDSzHkxnyGAAwV_Kgrh0vhWg4wzFSGwyHAFZxIPMrkzTptJP4TnJIWFYTot4m5yGtIdoFuzunPB4V0shJq31YLHIJqmDOEUE8EOiFKdBFzjQo"
+                            width="297px;"
+                            height="537px;"
+                            alt="singleMenu.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Connection Error Toast
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        Location Error Toast
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh6.googleusercontent.com/XYo-BN9n3ExbZLoqTQ0rDZEQ21AvasNgC-rvOqdwnzh8JS0nN7Kf7TrNYXq70BRSNRF_Cxoj_v2xx5_oeJINB685otMrrC_i3FgmekdYSfpzJXrRVfFJ_R9xq6lPe8nNceoxH3Y"
+                            width="297px;"
+                            height="537px;"
+                            alt="CannotConnect.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/_p6xzfwzuL5AkfHklxU0LQfTtmFZhnmHdMBGrjXujXBQNBylIj3KVu97iK4xbZmPMmSYPpXiDnrVO9kxSOhDArXpDYYhIyuvFgBd-_KP1dsjPqsVm1xl_HRBCWiJn2fWb2Cae4g"
+                            width="297px;"
+                            height="537px;"
+                            alt="LocationNotEnabled.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        Deleted From Favourites
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        About Activity
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh5.googleusercontent.com/MEmQ4pYl4oo4ibbnUGQCpqJ-r5fAq_SqyIv6L6ZaAHUMAPN8q44oz7ZA-FAmYB1-AevPEB27xxy0ROV0f6RtV-p55lNfW40T3_oH1Xp7RURQ0pcbHQVGcwbQvfI5H7lVmhRLnAs"
+                            width="297px;"
+                            height="537px;"
+                            alt="deletedFroFavourites.png"
+                        />
+                    </p>
+                </td>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/ysBZUUMdiIiEE8S2gw1fYbe-2nARx8hRe0KIPurDz9gTQSiYjBSxRSpuNg7GfALhMi18IEkxIxiZ6DqQ1M7zaJG1L3vcvBSHp7PBQIN-8LLzGWnaKkiEdAUYk--ae0NXekIjS9E"
+                            width="297px;"
+                            height="537px;"
+                            alt="about.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<div dir="ltr">
+    <table>
+        <colgroup>
+            <col width="*"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh3.googleusercontent.com/VHHC0gXznOHZAJ6wprhEZBtMTwHt-6oNkpqLAkzutAx1G7UySBy-CbzjP6KtkN47FuPkvZIdxeBwog-b8-4wAzJepcBsuCTMUR8Dw9-rdwPbdUQ1pwpmBTCryGc_b1ZPHkybu-4"
+                            width="609px;"
+                            height="300px;"
+                            alt="AllPlaces.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh5.googleusercontent.com/1t4xGCI41mCRXlMOBnMPkHURKV8O7gTC1wjPvy9cgMyoB3wlZFEYVOFZ2k_lkBfSpBeaIgJn0YOmuag3JuG-4057PZTpW2LvoBrPb682L7N6b7WGrjLL7Tn8xP34FszRqVlD9nQ"
+                            width="609px;"
+                            height="260px;"
+                            alt="Reported.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p dir="ltr">
+                        <img
+                            src="https://lh4.googleusercontent.com/tdE8NQ3cmLP2Bsh6aaYelu4ho2MNceiqpjEKQabccpw41VDr69RgGTjX6ZImCpdVC-1uH3p1EWAhyAdbRqEUO9Xo73rEEf4RGOpCAs2kt2llp_rqS9Dtj8XD_SyTmsXZiFHzQeE"
+                            width="609px;"
+                            height="236px;"
+                            alt="Login.png"
+                        />
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+
+  </div>
+{% endblock %}
+

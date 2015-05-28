@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<head>
+    <style>
+        table, th, td {
+		    border: 2px solid black;
+		    border-collapse: collapse;
+		    background: #111111;
+		    color: #999;
+		    width: 1024px;
+        }
+        
+        th, td {
+        	padding: 5px;
+
+        }
+        
+        div.scrollable {
+			width: 100%;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+		}
+		
+		img.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+<!--		td:hover {-->
+<!-- 			 -webkit-transform: scale(1.25,1.25);-->
+<!--		}-->
+		img:hover {
+ 			 -webkit-transform: scale(2,2);
+		}
+		
+		
+ </style>
+		
+		
+    </style>
+
+</head>
+
+
+<div class="jumbo">
+    <h2>All Places</h2>
+    <body>
+</div>
+
+<table  style="width:100%">
+
+    <thead>
+    <tr >
+        <th>ID</th>
+        <th>Title</th>
+        <th>Place</th>
+        <th>Comments</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for result in results %}
+
+    <tr>
+        <td style="width:5%" >{{result.id}}</td>
+        <td style="width:10%">{{result.title}}</td>
+        <td style="width:15%">{{result.place}}</td>
+        <td style="width:30%"><div class=scrollable>{{result.comments}}</div></td>
+       <td  style="width:10%"> <img  class=center src= {{"/static/img/" + result.photo}}   alt="Places" style="width:80px;height:80px;" ></td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>  
+</table>
+
+
+<table  style="width:100%">
+
+    <thead>
+    <tr >
+        <th>ID</th>
+        <th>Title</th>
+        <th>Place</th>
+        <th>Comments</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Photo</th>
+        <th>Posted</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for result in results %}
+
+    <tr>
+        <td style="width:25px">{{result.id}}</td>
+        <td>{{result.title}}</td>
+        <td>{{result.place}}</td>
+        <td>{{result.comments}}</td>
+        <td>{{result.lat}}</td>
+        <td>{{result.lng}}</td>
+        <td>{{result.photo}}</td>
+        <td>{{result.posted}}</td>
+       <td> <img src= {{"/static/img/" + result.photo}}   alt="Places" style="width:160px;height:160px"></td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>    
+</table>
+
+</body>
+
+{% endblock %}
+
+
+
