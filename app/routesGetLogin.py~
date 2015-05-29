@@ -42,7 +42,7 @@ class User(db.Model):
     created = db.Column(db.DateTime)
 
 # home page
-@app.route('/templates2/home/')
+@app.route('/home/')
 def home():
     return render_template('home.html')
 
@@ -178,7 +178,7 @@ def login():
                 error = 'Invalid Credentials. Please try again.'
             else:
                 print "Successful"
-                return redirect(url_for('templates2/home'))
+                return redirect(url_for('home'))
 
     return render_template('login.html', error=error)
 

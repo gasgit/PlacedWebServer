@@ -74,7 +74,7 @@ def postImage():
         photo = request.json["photoPost"]  # A field from the json 
         image = request.json["imagePost"].decode("base64")  # The data image
         json = request.json
-    filename = open(os.path.join('/home/glen/myFlaskWebServer/app/static/img/', photo), 'w')
+    filename = open(os.path.join('/home/glen/FlaskWebServer/app/static/img/', photo), 'w')
     filename.write(image)
     filename.close()
     sys.stdout = filename
